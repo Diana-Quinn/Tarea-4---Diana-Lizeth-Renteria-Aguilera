@@ -1,0 +1,55 @@
+<div class="Info">
+<p align="center">CONTACTO</p>
+<p align="center">Completa los datos requeridos para contactarnos </p>
+</div>
+
+<ion-content padding>
+  <div class="proyecto">
+    <ion-card>
+     <ion-item>
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input [(ngModel)]="nombre" name="nombre" placeholder="su nombre"></ion-input>
+     </ion-item> 
+    </ion-card>
+
+    <ion-card>
+     <ion-item>
+        <ion-label position="floating">Correo</ion-label>
+        <ion-input [(ngModel)]="correo" name="correo" placeholder="su correo"></ion-input>
+     </ion-item>
+    </ion-card>
+
+    <ion-card>
+     <ion-item>
+       <ion-label position="floating">Telefono</ion-label>
+       <ion-input [(ngModel)]="telefono" name="telefono" placeholder="su telefono"></ion-input>
+     </ion-item>
+    </ion-card>
+
+    <ion-card>
+     <ion-item>
+       <ion-label position="floating">Mensaje</ion-label>
+       <ion-textarea [(ngModel)]="msn" name="msn"></ion-textarea>
+     </ion-item>
+    </ion-card>
+
+    <ion-card>
+      <ion-item>
+        <ion-button (click)="SendInfo()">Enviar</ion-button>
+      </ion-item>  
+    </ion-card>
+
+   <ion-card *ngIf="datos.length > 0">
+     <ion-row>
+       <ion-col size=3>Nombre</ion-col> <ion-col size=3>Correo</ion-col> <ion-col size=3>Telefono</ion-col> <ion-col size=3>Mensaje</ion-col>
+     </ion-row>
+
+     <ion-row *ngFor="let dato of datos">
+        <ion-col size="3">{{dato.nombre}}</ion-col>
+        <ion-col size="3">{{dato.correo}}</ion-col>
+        <ion-col size="3">{{dato.telefono}}</ion-col>
+        <ion-col size="3">{{dato.msn}}</ion-col>
+     </ion-row>
+   </ion-card>
+ </div>
+ </ion-content>
